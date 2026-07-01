@@ -43,21 +43,21 @@ jobs:
             self_runs_on: '["self-hosted","cef","windows","x64"]'
             build_flag: --x64-build
             extra_env: ""
-          - id: linux-x64
-            shared_runs_on: '["ubuntu-24.04"]'
-            self_runs_on: '["self-hosted","cef","linux","x64"]'
-            build_flag: --x64-build
-            extra_env: ""
-          - id: macos-x64
-            shared_runs_on: '["macos-15"]'
-            self_runs_on: '["self-hosted","cef","macos","x64"]'
-            build_flag: --x64-build
-            extra_env: CEF_ENABLE_AMD64=1
-          - id: macos-arm64
-            shared_runs_on: '["macos-15"]'
-            self_runs_on: '["self-hosted","cef","macos","arm64"]'
-            build_flag: --arm64-build
-            extra_env: ""
+          # - id: linux-x64
+          #   shared_runs_on: '["ubuntu-24.04"]'
+          #   self_runs_on: '["self-hosted","cef","linux","x64"]'
+          #   build_flag: --x64-build
+          #   extra_env: ""
+          # - id: macos-x64
+          #   shared_runs_on: '["macos-15"]'
+          #   self_runs_on: '["self-hosted","cef","macos","x64"]'
+          #   build_flag: --x64-build
+          #   extra_env: CEF_ENABLE_AMD64=1
+          # - id: macos-arm64
+          #   shared_runs_on: '["macos-15"]'
+          #   self_runs_on: '["self-hosted","cef","macos","arm64"]'
+          #   build_flag: --arm64-build
+          #   extra_env: ""
 
     runs-on: ${{ fromJson(((github.event.inputs.runner_mode || 'shared') == 'self-hosted') && matrix.self_runs_on || matrix.shared_runs_on) }}
 
