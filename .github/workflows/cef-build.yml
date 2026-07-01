@@ -65,7 +65,7 @@ jobs:
       RUNNER_MODE: ${{ github.event.inputs.runner_mode || 'shared' }}
       CEF_VERSION: ${{ github.event.inputs.cef_version || vars.CEF_VERSION || vars.CEF_BRANCH || 'latest' }}
       CEF_GN_DEFINES: ${{ vars.CEF_GN_DEFINES || 'is_official_build=true proprietary_codecs=true ffmpeg_branding=Chrome enable_platform_hevc=true enable_hevc_parser_and_hw_decoder=true' }}
-      CEF_FAST_GN_DEFINES: ${{ vars.CEF_FAST_GN_DEFINES || 'symbol_level=0 blink_symbol_level=0 v8_symbol_level=0 use_jumbo_build=true' }}
+      CEF_FAST_GN_DEFINES: ${{ vars.CEF_FAST_GN_DEFINES || 'symbol_level=0 blink_symbol_level=0 v8_symbol_level=0 use_lld=true' }}
       SCCACHE_CACHE_SIZE: ${{ vars.SCCACHE_CACHE_SIZE || '80G' }}
       SCCACHE_IDLE_TIMEOUT: "0"
       SCCACHE_DIRECT: "true"
